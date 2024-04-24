@@ -1,0 +1,18 @@
+@import url(../src/vendor/fonts/fonts.css);
+
+:root {
+	--font-family-main: 'Inter', serif;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0F0F17;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

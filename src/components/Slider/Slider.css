@@ -1,0 +1,219 @@
+.slider__page {
+    display: flex;
+    padding: 40px 40px 40px 40px;
+    margin: 0;
+    margin-top: 121px;
+    background-color: #0F0F17;
+    border: transparent;
+    border: none;
+}
+
+.slider__container {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    /* box-sizing: border-box; */
+    border-bottom: 1px solid rgb(52, 52, 52);
+}
+
+.slider__info {
+    width: 51%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #0F0F17;
+    margin: 0;
+    padding: 0;
+    /* border: 1px red solid; */
+}
+
+.slider {
+    /* position: relative; */
+    display: flex;
+    justify-content: flex-end;
+    /* width: 100%; */
+    width: 49%;
+    width: 670px;
+    background-color: #0F0F17;
+    margin: 0;
+    padding: 0;
+    /* border: 1px red solid; */
+}
+
+.slider__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    /* height: 100%; */
+    background-color: #0F0F17;
+}
+
+.slider__card {
+    display: flex;
+    flex: 1;
+    position: absolute;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0;
+    /* transform: translateX(100%); */
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    background-color: #0F0F17;
+}
+
+.slider__card-active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: visible;
+}
+
+.card__image {
+    width: 100%;
+    object-fit: cover;
+    /* border: 1px solid red; */
+}
+
+.slider__arrows {
+    display: flex;
+    margin: 249px 0 50px 10px;
+    gap: 43px;
+}
+
+.slider__arrow-left,
+.slider__arrow-right {
+    font-size: 40px;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+.slider__arrow-left {
+    left: 15px;
+    background-image: url(/public/images/icons/strelka-vlevo.svg);
+}
+
+.slider__arrow-right {
+    right: 15px;
+    background-image: url(/public/images/icons/strelka-vpravo.svg);
+}
+
+.slider__title {
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+    margin: 35px 0 0 0;
+}
+
+.slider__subtitle {
+    color: white;
+    max-width: 440px;
+    margin: 20px 0 0 0;
+}
+
+.slider__btn {
+    display: flex;
+    width: 75px;
+    height: 26px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FFFFFF;
+}
+
+@media screen and (max-width: 320px) {
+
+    .slider__page {
+        padding: 0 0 0 0;
+        margin-top: 103px;
+        flex-direction: column;
+    }
+
+    .slider__container {
+        flex-direction: column-reverse;
+    }
+
+    .slider {
+        width: 100%;
+        height: 218px;
+    }
+
+    .slider__info {
+        width: auto;
+        padding: 0 0 26px 0;
+        margin: 0 10px;
+        border-bottom: 1px solid grey;
+    }
+
+    .slider__title {
+        color: white;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26.4px;
+        margin: 20px 0 0 0;
+    }
+
+    .slider__subtitle {
+        color: gray;
+        margin: 11px 0 0 0;
+        padding-right: 10px;
+        max-height: 40px;
+        /* border: 1px red solid; */
+        overflow: hidden;
+    }
+
+    .card__image {
+        height: 218px;
+    }
+
+    .slider__btn {
+        display: none;
+    }
+
+    .slider__arrows {
+        display: flex;
+        margin: 51px 0 0px 9px;
+        gap: 37px;
+    }
+
+    .slider__arrow-left,
+    .slider__arrow-right {
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-size: contain;
+        width: 23px;
+        height: 23px;
+    }
+
+}

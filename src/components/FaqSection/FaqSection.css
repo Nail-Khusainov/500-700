@@ -1,0 +1,135 @@
+.faq-section {
+  display: flex;
+  padding: 156px 40px 60px;
+  margin: -1px 0 0 0;
+  justify-content: space-between;
+  background-color: #0F0F17;
+}
+
+.faq__title {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 44px;
+  padding: 0;
+  margin: 0;
+}
+
+.faq__block {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 900px;
+  gap: 20px; 
+}
+
+.faq__element {
+  margin: 0;
+  padding: 15px 10px 0 0px;
+  border-bottom: 1px gray solid;
+}
+
+.faq__question {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.faq__question-text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26.4px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  margin: 0;
+  padding: 0 0 35px 0;
+}
+
+.faq__answer-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.8px;
+  margin: 0;
+  padding: 33px 0 0 0px;
+  color: white;
+  max-width: 580px;
+}
+
+.toggles {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  align-items: center;
+}
+
+.faq__question-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.vector {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+.expanded .vector {
+  transform: rotate(90deg);
+}
+
+.expandedAnswer {
+  max-height: 300px;
+  border: transparent;
+}
+
+@media screen and (max-width: 320px) {
+  .faq-section {
+    flex-direction: column;
+    padding: 0 10px 40px;
+    margin: 150px 0 0 0;
+  }
+
+  .faq__title {
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26.4px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .faq__block {
+    width: 300px;
+    margin: 50px 0 0 0;
+    gap: 20px;
+  }
+
+  .faq__element {
+    padding: 0px 10px 0 0px;
+  }
+
+  .faq__question-text {
+    font-size: 16px;
+    line-height: 17.6px;
+    padding-right: 35px;
+  }
+
+  .faq__answer {
+    padding: 0 0 20px 0;
+  }
+
+  .faq__answer-text {
+    padding: 22px 0 0 0px;
+  }
+}
