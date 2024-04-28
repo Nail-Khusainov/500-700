@@ -1,4 +1,4 @@
-import './MainPage.css';
+import './MainPage.scss';
 
 import FaqSection from '../../components/FaqSection/FaqSection';
 import News from '../../components/News/News';

@@ -1,7 +1,7 @@
-import { useEffect }from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { news } from '../../components/News/Data';
-import './NewsPage.css'
+import './NewsPage.scss'
 
 const NewsPage = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const NewsPage = () => {
   useEffect(() => {
     console.log("useEffect triggered");
     window.scrollTo(0, 0);
-}, []);
+  }, []);
 
   console.log(newsItem);
 
@@ -24,7 +24,7 @@ const NewsPage = () => {
 
   return (
     <div className='newspage'>
-        <img className="newspage__image" src={image} alt={title} />
+      <img className="newspage__image" src={image} alt={title} />
       <div className="newspage__text-block">
         <h1 className="newspage__title">{title}</h1>
         <p className="newspage__caption">{caption}</p>

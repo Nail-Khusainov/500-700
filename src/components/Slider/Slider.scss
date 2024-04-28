@@ -1,0 +1,211 @@
+@import "../../styles/general/general.scss";
+
+.slider__page {
+    display: flex;
+    padding: 40px 40px 0px;
+    margin: 0;
+    margin-top: 121px;
+    background-color: $bg-color;
+    border: transparent;
+    border: none;
+    color: $text-color;
+
+    @media screen and (max-width: $tablet) {
+        margin-top: 103px;
+        flex-direction: column;
+        padding: 20px 40px 0px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        padding: 0;
+        margin-top: 103px;
+        flex-direction: column;
+    }
+
+    .slider__container {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid rgb(52, 52, 52);
+        justify-content: space-between;
+
+        @media screen and (max-width: $mobile) {
+            flex-direction: column-reverse;
+        }
+
+        .slider__info {
+            width: 51%;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            background-color: $bg-color;
+            margin: 0;
+            padding: 0;
+
+            @media screen and (max-width: $tablet) {
+                max-width: 300px;
+            }
+
+            @media screen and (max-width: $mobile) {
+                max-width: fit-content;
+                width: auto;
+                padding: 0 0 26px 0;
+                margin: 0 10px;
+                border-bottom: 1px solid grey;
+            }
+
+            .slider__btn {
+                display: flex;
+                width: 75px;
+                height: 26px;
+                margin: 0;
+                padding: 0;
+                color: $text-color;
+                text-decoration: none;
+                @include text-props(bold, 12px, 15px);
+                cursor: pointer;
+                border-radius: 30px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #FFFFFF;
+                opacity: .5;
+
+                &:hover {
+                    opacity: .8;
+                }
+
+                @media screen and (max-width: $mobile) {
+                    display: none;
+                }
+            }
+
+            .slider__title {
+                @extend %h1;
+                margin: 35px 0 0 0;
+
+                @media screen and (max-width: $tablet) {
+                    @include text-props(600, 24px, 26.4px);
+                    margin: 20px 0 0 0;
+                }
+            }
+
+            .slider__subtitle {
+                max-width: 440px;
+                margin: 20px 0 0 0;
+                opacity: 0.5;
+
+                @media screen and (max-width: $tablet) {
+                    margin: 11px 0 0 0;
+                    padding-right: 10px;
+                    max-height: 40px;
+                    overflow: hidden;
+                }
+            }
+
+            .slider__arrows {
+                display: flex;
+                gap: 43px;
+                margin-top: 36%;
+                padding-left: 10px;
+                padding-bottom: 50px;
+
+                @media screen and (max-width: $mobile) {
+                    display: flex;
+                    margin: 51px 0 0px 9px;
+                    gap: 37px;
+                    padding-left: 0;
+                    padding-bottom: 0px;
+                }
+
+                .slider__arrow-left,
+                .slider__arrow-right {
+                    font-size: 40px;
+                    top: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
+                    background-size: contain;
+                    width: 30px;
+                    height: 30px;
+
+                    @media screen and (max-width: $mobile) {
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+
+                .slider__arrow-left {
+                    left: 15px;
+                    background-image: url(../../../public/images/icons/strelka-vlevo.svg);
+                }
+
+                .slider__arrow-right {
+                    right: 15px;
+                    background-image: url(../../../public/images/icons/strelka-vpravo.svg);
+                }
+            }
+        }
+
+        .slider {
+            display: flex;
+            justify-content: flex-end;
+            width: 49%;
+            max-width: 760px;
+            background-color: $bg-color;
+            margin: 0;
+            padding: 0;
+
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+                height: 218px;
+            }
+
+            .slider__wrapper {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                background-color: $bg-color;
+
+                .slider__card {
+                    display: flex;
+                    flex: 1;
+                    position: absolute;
+                    justify-content: flex-end;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    opacity: 0;
+                    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+                    background-color: $bg-color;
+                }
+
+                .slider__card-active {
+                    opacity: 1;
+                    transform: translateX(0);
+                    pointer-events: visible;
+                }
+
+                .card__image {
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+
+                    @media screen and (max-width: $mobile) {
+                        height: 218px;
+                    }
+                }
+            }
+        }
+    }
+}

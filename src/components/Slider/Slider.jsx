@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import './Slider.css';
+import './Slider.scss';
 import { NavLink } from "react-router-dom";
 
 function Slider({ images }) {
@@ -70,8 +70,6 @@ function Slider({ images }) {
                                     key={index}
                                 >
                                     <img className='card__image' src={image.image} alt='' />
-                                    <div className="card__overlay"></div>
-                                    <h2 className="card__title"></h2>
                                 </div>
                             );
                         })}

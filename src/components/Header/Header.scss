@@ -1,0 +1,84 @@
+@import "../../styles/general/general.scss";
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 21px 0 14px;
+    top: 0;
+    left: 0;
+    background-color: $bg-color;
+    border-bottom: 1px solid rgb(59, 58, 58);
+    z-index: 4;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $tablet) {
+        padding: 20px 10px 10px;
+    }
+
+    .header__navigation {
+        position: absolute;
+        width: 100%;
+
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    .header__logo {
+        width: 70px;
+        height: 84px;
+        margin: 0 0 0 40px;
+        padding: 0;
+        opacity: 1;
+        transition: opacity .3s;
+        transition-timing-function: ease;
+        background-image: url(../../images/logo.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 200;
+
+        @media screen and (max-width: $tablet) {
+            width: 44px;
+            height: 53px;
+        }
+
+        @media screen and (max-width: $mobile) {
+            margin: 0;
+        }
+    }
+
+    .header__btn {
+        display: flex;
+        position: relative;
+        width: 181px;
+        height: 45px;
+        margin: 0 39px 0 0;
+        padding: 0;
+        color: $text-color;
+        @extend %link-general;
+        cursor: pointer;
+        border-radius: 30px;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: +.6px;
+        background-image:
+            linear-gradient(to right, black, black),
+            $gradient;
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        border: 1px solid transparent;
+        z-index: 200;
+
+        &:hover {
+            background-image: $gradient;
+        }
+
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+}

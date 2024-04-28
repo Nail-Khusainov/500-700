@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./BurgerMenu.css";
+import "./BurgerMenu.scss";
 import PopupForm from '../PopupForm/PopupForm';
+import Nav from "../Nav/Nav";
 
 function BurgerMenu() {
     const [isBurgerOpened, setIsBurgerOpened] = useState(false);
@@ -33,37 +34,7 @@ function BurgerMenu() {
                 {isBurgerOpened && (
                     <>
                         <ul className="burger__menu-list">
-                            <li>
-                                <a
-                                    href="https://500na700.ru/my/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className='header__nav-link'
-                                >
-                                    О 500на700
-                                </a>
-                            </li>
-
-                            <li>
-                                <a
-                                    href="https://500na700.ru/offer/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className='header__nav-link'
-                                >
-                                    Документы
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://500na700.ru/project/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className='header__nav-link'
-                                >
-                                    Устойчивое развитие
-                                </a>
-                            </li>
+                            <Nav onClose={toggleBurgerMenu} />
                             <div className="header__authbar">
                                 <button
                                     className='burger__contact-btn'

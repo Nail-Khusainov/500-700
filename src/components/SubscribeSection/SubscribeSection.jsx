@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './SubscribeSection.css';
+import InputMask from 'react-input-mask';
+import './SubscribeSection.scss';
 
 const SubscribeSection = () => {
   const [formData, setFormData] = useState({
@@ -62,8 +63,12 @@ const SubscribeSection = () => {
         parseInt(parts[2]) < 1900 || parseInt(parts[2]) > 2020) {
         return 'Введите корректную дату в формате "дд.мм.гггг"';
       }
-    } else if (name === 'tel' && !/^\+?\d{5,11}$/.test(value)) {
-      return 'Введите корректный номер (от 5 до 11 символов)';
+    } else if (name === 'tel') {
+      // проверяем наличия хотя бы 11 цифр в поле телефона
+      const digitCount = (value.match(/\d/g) || []).length;
+      if (digitCount < 11) {
+        return 'Введите корректный номер';
+      }
     } else if (name === 'time') {
       if (value.trim() === '') {
         return 'Пожалуйста, введите время';
@@ -75,9 +80,8 @@ const SubscribeSection = () => {
         return 'Введите корректное время в формате "чч:мм"';
       }
     } else if (name === 'agree' && !value) {
-      return 'Пожалуйста, согласитесь с обработкой персональных данных';
+      return 'Необходимо согласие';
     }
-
     return '';
   };
 
@@ -92,10 +96,10 @@ const SubscribeSection = () => {
       </div>
 
       <form className="subscribe__form" onSubmit={handleSubmit} noValidate>
-        <div className="subscrive__form-inputs">
+        <div className="subscribe__form-inputs">
           <label htmlFor="email">
             <input
-              className={`input ${errors.email && 'inputWrong'}`}
+              className={`subscribe__form-input ${errors.email && 'subscribe__form-inputWrong'}`}
               type="email"
               name="email"
               id="email"
@@ -109,7 +113,7 @@ const SubscribeSection = () => {
 
           <label htmlFor="date">
             <input
-              className={`input ${errors.date && 'inputWrong'}`}
+              className={`subscribe__form-input ${errors.date && 'subscribe__form-inputWrong'}`}
               type="text"
               name="date"
               id="date"
@@ -122,8 +126,9 @@ const SubscribeSection = () => {
           </label>
 
           <label htmlFor="tel">
-            <input
-              className={`input ${errors.tel && 'inputWrong'}`}
+            <InputMask
+              mask="+7 (999) 999-99-99"
+              className={`subscribe__form-input ${errors.tel && 'subscribe__form-inputWrong'}`}
               type="tel"
               name="tel"
               id="tel"
@@ -137,7 +142,7 @@ const SubscribeSection = () => {
 
           <label htmlFor="time">
             <input
-              className={`input ${errors.time && 'inputWrong'}`}
+              className={`subscribe__form-input ${errors.time && 'subscribe__form-inputWrong'}`}
               type="text"
               name="time"
               id="time"
@@ -165,7 +170,7 @@ const SubscribeSection = () => {
           {errors.agree && <span className="error">{errors.agree}</span>}
         </div>
 
-        <button className="mainBtn" type="submit">
+        <button className="subscribe__submit-btn " type="submit">
           Подписаться
         </button>
       </form>

@@ -1,4 +1,3 @@
-/* Arrows */
 .slick-prev,
 .slick-next
 {
@@ -10,12 +9,12 @@
     border: transparent;
     outline: none;
     background: transparent;
+    top: 110%;
 }
 
 .slick-prev
 {
-    top: 411px;
-    right: 279px;
+    left: 17px;
     width: 24px;
     height: 24px;
     background-image: url(../../../public/images/icons/strelka-vlevo.svg);
@@ -26,10 +25,9 @@
 
 .slick-next
 {
-    top: 411px;
-    right: 218px;
     width: 24px;
     height: 24px;
+    left: 78px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

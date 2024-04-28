@@ -1,5 +1,5 @@
 import React from 'react';
-import './NewsCard.css';
+import './NewsCard.scss';
 
 const NewsCard = ({ newsItem, index }) => {
   const { image, title, text, caption } = newsItem;

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import './PopupForm.css';
+import InputMask from 'react-input-mask';
+import './PopupForm.scss';
 
 const PopupForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     tel: '',
     agree: false,
   });
 
   const [errors, setErrors] = useState({
-    email: '',
+    username: '',
     tel: '',
     agree: '',
   });
@@ -40,15 +41,16 @@ const PopupForm = ({ onClose }) => {
   };
 
   const validateField = (name, value) => {
-    if (name === 'email') {
+    if (name === 'username') {
       if (value.trim() === '') {
         return 'Пожалуйста, заполните поле';
       }
-      if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i.test(value)) {
-        return 'Введите корректный email';
+    } else if (name === 'tel') {
+      // проверяем наличия хотя бы 11 цифр в поле телефона
+      const digitCount = (value.match(/\d/g) || []).length;
+      if (digitCount < 11) {
+        return 'Введите корректный номер';
       }
-    } else if (name === 'tel' && !/^\+?\d{5,11}$/.test(value)) {
-      return 'Введите корректный номер (от 5 до 11 символов)';
     } else if (name === 'agree' && !value) {
       return 'Требуется согласие';
     }
@@ -66,24 +68,25 @@ const PopupForm = ({ onClose }) => {
         />
         <h2 className="popup__title">CВЯЗАТЬСЯ С НАМИ</h2>
         <div className="popup__inputs">
-          <label htmlFor="email">
+          <label htmlFor="username">
             <input
-              className={`popup__input ${errors.email && 'popup__inputWrong'}`}
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
+              className={`popup__input ${errors.username && 'popup__inputWrong'}`}
+              type="text"
+              name="username"
+              id="username"
+              value={formData.username}
               onChange={handleChange}
               placeholder="Имя"
               required
             />
             <div className="popup__error-container">
-              {errors.tel && <span className="popup__error">{errors.email}</span>}
+              {errors.username && <span className="popup__error">{errors.username}</span>}
             </div>
           </label>
 
           <label htmlFor="tel">
-            <input
+            <InputMask
+              mask="+7 (999) 999-99-99"
               className={`popup__input ${errors.tel && 'popup__inputWrong'}`}
               type="tel"
               name="tel"

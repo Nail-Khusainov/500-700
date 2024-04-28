@@ -1,0 +1,68 @@
+@import "../../styles/general/general.scss";
+
+// $text-color: white;
+.news-card {
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+    width: 440px;
+    color: $text-color;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+
+    &:hover .news-card__title {
+        @extend %gradient-hover;
+        border-radius: 20px;
+    }
+
+    &:hover .news-card__image {
+        border-radius: 20px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 100%;
+        height: auto;
+    }
+
+    .news-card__image {
+        display: flex;
+        width: 100%;
+    }
+
+    .news-card__content {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $mobile) {
+            padding: 0 10px;
+        }
+
+        .news-card__title {
+            @include text-props(600, 24px, 26.4px);
+            margin: 20px 0 10px 0;
+            @extend %h2;
+
+            @media screen and (max-width: $mobile) {
+                @include text-props(600, 20px, 22px);
+            }
+        }
+
+        .news-card__text {
+            @extend %text-general;
+            margin: 0;
+            opacity: .5;
+
+            @media screen and (max-width: $mobile) {
+                max-height: 62px;
+                overflow: hidden;
+            }
+        }
+
+        .news-card__caption {
+            @extend %text-general;
+            margin: 20px 0 0 0;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+@import "../../styles/general/general.scss";
+
+.newspage {
+    margin-top: 197px;
+    padding: 2px 40px 154px 40px;
+    display: flex;
+    background-color: $bg-color;
+    gap: 20px;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        padding: 40px 0 85px;
+        margin-top: 84px;
+    }
+
+    .newspage__image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        max-width: 440px;
+        height: 320px;
+
+        @media screen and (max-width: $tablet) {
+            width: 50%;
+            height: 270px;
+        }
+
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+            max-width: 400px;
+            height: 232px;
+        }
+    }
+
+    .newspage__text-block {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        color: $text-color;
+
+        
+
+
+        @media screen and (max-width: $mobile) {
+            padding: 0 10px;
+            margin: 0;
+        }
+
+        .newspage__title {
+            @extend %h1;
+            padding: 0;
+            margin: 0;
+
+            @media screen and (max-width: $mobile) {
+                @include text-props(600, 24px, 26.4px)
+            }
+        }
+
+        .newspage__caption {
+            @extend %text-general;
+            padding: 20px 0 0 0;
+            margin: 0;
+            opacity: .5;
+
+            @media screen and (max-width: $mobile) {
+                padding: 10px 0 0 0;
+            }
+        }
+
+        .newspage__subtitle {
+            @extend %h3;
+            max-width: 440px;
+            padding: 40px 0 0 0;
+            margin: 0;
+
+            @media screen and (max-width: $mobile) {
+                padding: 30px 0 0 0;
+            }
+        }
+
+        .newspage__fulltext {
+            display: flex;
+            flex-direction: column;
+            @extend %text-general;
+            max-width: 440px;
+            padding: 0;
+            margin: 20px 0 0 0;
+            gap: 10px;
+
+            @media screen and (max-width: $mobile) {
+                margin: 10px 0 0 0;
+            }
+
+            .newspage__paragraph {
+                padding: 0;
+                margin: 0;
+            }
+        }        
+    }
+}

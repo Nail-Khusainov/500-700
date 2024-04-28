@@ -1,0 +1,60 @@
+//vars
+$text-color: white;
+$bg-color: #0F0F17;
+$mobile: 600px;
+$tablet: 980px;
+$desktop: 1440px;
+$input-error: rgb(192, 0, 0);
+
+// templates
+%h1 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+}
+
+%h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26.4px;
+}
+
+%h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+%h4 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17.6px;
+}
+
+%text-general {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.8px;
+}
+
+%link-general {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20.8px;
+}
+
+$gradient: linear-gradient(to right, #FB8627, #F5BEF6);
+$gradient-to-down: linear-gradient(#FB8627, #F5BEF6);
+
+%gradient-hover {
+    background: linear-gradient(#ff6b6b, #ffc947);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// mixins
+@mixin text-props($fw, $fz, $lh ) {
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+}
