@@ -29,11 +29,12 @@
         padding: 0;
         width: 100%;
         position: relative;
-        border-bottom: 1px solid rgb(52, 52, 52);
+        border-bottom: 1px solid rgb(42, 42, 42);
         justify-content: space-between;
 
         @media screen and (max-width: $mobile) {
             flex-direction: column-reverse;
+            border-bottom: none;
         }
 
         .slider__info {
@@ -54,7 +55,7 @@
                 width: auto;
                 padding: 0 0 26px 0;
                 margin: 0 10px;
-                border-bottom: 1px solid grey;
+                border-bottom: .5px solid rgb(60, 60, 60);
             }
 
             .slider__btn {

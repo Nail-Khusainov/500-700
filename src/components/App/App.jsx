@@ -15,7 +15,6 @@ function App() {
         <Route element={<MainPage />} exact path="/" />
         <Route element={<NewsPage />} path="/newspage/:id" />
       </Routes>
-
       <Footer />
     </div>
   );

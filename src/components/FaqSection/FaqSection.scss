@@ -61,7 +61,7 @@
           @extend %h2;
           margin: 0;
           padding: 0;
-          
+
 
           @media screen and (max-width: $tablet) {
             @include text-props(600, 16px, 17.6px);
@@ -123,47 +123,4 @@
       }
     }
   }
-}
-
-
-@media screen and (max-width: $mobile) {
-  // .faq-section {
-  //   flex-direction: column;
-  //   padding: 0 10px 40px;
-  //   margin: 150px 0 0 0;
-  // }
-
-  // .faq__title {
-  //   color: white;
-  //   font-weight: 600;
-  //   font-size: 24px;
-  //   line-height: 26.4px;
-  //   padding: 0;
-  //   margin: 0;
-  // }
-
-  // .faq__block {
-  //   width: 100%;
-  //   margin: 50px 0 0 0;
-  //   gap: 20px;
-  //   border: 1px solid red;
-  // }
-
-  // .faq__element {
-  //   padding: 0px 10px 0 0px;
-  // }
-
-  // .faq__question-text {
-  //   font-size: 16px;
-  //   line-height: 17.6px;
-  //   padding-right: 35px;
-  // }
-
-  // .faq__answer {
-  //   padding: 0 0 20px 0;
-  // }
-
-  // .faq__answer-text {
-  //   padding: 22px 0 0 0px;
-  // }
 }

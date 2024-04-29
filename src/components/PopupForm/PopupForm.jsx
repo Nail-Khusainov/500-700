@@ -46,7 +46,6 @@ const PopupForm = ({ onClose }) => {
         return 'Пожалуйста, заполните поле';
       }
     } else if (name === 'tel') {
-      // проверяем наличия хотя бы 11 цифр в поле телефона
       const digitCount = (value.match(/\d/g) || []).length;
       if (digitCount < 11) {
         return 'Введите корректный номер';

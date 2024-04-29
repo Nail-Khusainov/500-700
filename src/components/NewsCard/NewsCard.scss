@@ -14,16 +14,25 @@
 
     &:hover .news-card__title {
         @extend %gradient-hover;
-        border-radius: 20px;
     }
 
     &:hover .news-card__image {
         border-radius: 20px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media (max-width: $mobile) {
         width: 100%;
         height: auto;
+
+        &:hover .news-card__title {
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &:hover .news-card__image {
+            border-radius: 0px;
+        }
     }
 
     .news-card__image {

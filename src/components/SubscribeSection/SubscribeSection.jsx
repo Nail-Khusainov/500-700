@@ -64,7 +64,6 @@ const SubscribeSection = () => {
         return 'Введите корректную дату в формате "дд.мм.гггг"';
       }
     } else if (name === 'tel') {
-      // проверяем наличия хотя бы 11 цифр в поле телефона
       const digitCount = (value.match(/\d/g) || []).length;
       if (digitCount < 11) {
         return 'Введите корректный номер';
