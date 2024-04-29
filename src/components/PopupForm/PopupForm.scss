@@ -83,13 +83,13 @@
 
             @media screen and (max-width: $mobile) {
                 margin-top: 20px;
-                gap: 0;
+                gap: 0px;
             }
 
             .popup__input {
                 padding: 0 0 0 15px;
                 width: 423px;
-                height: 49px;
+                height: 51px;
                 border-radius: 10px;
                 @extend %text-general;
                 border: 1px #0F0F17 solid;
